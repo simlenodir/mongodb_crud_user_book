@@ -12,7 +12,8 @@ const bookSchema = new Schema({
     author: {
         type: String,
         required: true
-    }
+    },
+    readers: [{type: Types.ObjectId, ref: 'Readers'}]
 },
 {
     collection: "Books"

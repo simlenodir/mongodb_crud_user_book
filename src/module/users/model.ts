@@ -1,18 +1,19 @@
 import { Types, model, Schema } from "mongoose"
 
 const readerSchema = new Schema({
-    id: {
-        type: Types.ObjectId
-    },
+    // id: {
+    //     type: Types.ObjectId
+    // },
     name: {
         type: String,
         required: true,
-        minlenght: [3, 'Min leng is 3']
+        minLength: [3, 'Min length is 3'],
     },
     email: {
         type: String,
         required: true
-    }
+    },
+    books: [{type: Types.ObjectId , ref: 'Books'}]
 },
 {
     collection: "Readers"
